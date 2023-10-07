@@ -4,3 +4,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.not-loading, .not-error{
+  display: none;
+}
+
+.loading, .error{
+  display: initial;
+}

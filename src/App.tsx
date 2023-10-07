@@ -14,9 +14,9 @@ const App: React.FC = () => {
       }}
     >
       <div className="app-container">
-        {tokenLoading && <div className="app-loading">loading...</div>}
-        {tokenErrorMessage && <div className="app-error">{tokenErrorMessage}</div>}
-        {!tokenLoading && token && <SignUp />}
+        <div className={`${tokenLoading ? 'loading' : 'not-loading'}`}>loading...</div>
+        <div className={`${tokenErrorMessage ? 'error' : 'not-error'}`}>loading...</div>
+        {token && <SignUp />}
       </div>
     </TokenContext.Provider>
   );
