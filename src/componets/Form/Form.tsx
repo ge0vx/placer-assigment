@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FormContext } from "../../context/FormContext";
 import { FormElement, TypeFormElement } from "../FormElement/FormElement";
 import { IInputTextProps } from "../FormIput/FormInput";
 import { ISelectOptionProps, ISelectProps } from "../FormSelect/FormSelect";
 import { useSelectOptions } from "../../hooks/useSelectOptions";
+import { TokenContext } from "../../context/TokenContext";
 
 type TypeFormFileds = IInputTextProps[] & ISelectProps[];
 
@@ -19,6 +20,7 @@ interface IFormProps {
 }
 
 export const Form: React.FC<IFormProps> = ({ title, fields }) => {
+  const { token:  authToken} = useContext(TokenContext);
   const [elements, setElements] = useState<TypeFormFileds>(fields);
   const [dependency, setDependency] = useState<typeDependencies>();
   const {
@@ -109,7 +111,7 @@ export const Form: React.FC<IFormProps> = ({ title, fields }) => {
     >
       <form onSubmit={formHandleSubmit}>
         <h1>{title}</h1>
-        {elements
+        {authToken && elements
           ? elements.map((field: TypeFormElement, i: number) => (
               <FormElement key={i} field={field} />
             ))
