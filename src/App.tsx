@@ -1,10 +1,25 @@
-import "./styles.css";
+import React from "react";
+import "./App.css";
+import { SignUp } from "./pages/SignUp";
+import { TokenContext } from "./context/TokenContext";
+import { useUniversalTutorial } from "./hooks/useUniversalTutorial";
 
-export default function App() {
+const App: React.FC = () => {
+  const { token, tokenLoading, tokenErrorMessage } = useUniversalTutorial();
+
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic 2 happen!</h2>
-    </div>
+    <TokenContext.Provider
+      value={{
+        token: token ?? null
+      }}
+    >
+      <div className="app-container">
+        {tokenLoading && <div className="app-loading">loading...</div>}
+        {tokenErrorMessage && <div className="app-error">{tokenErrorMessage}</div>}
+        {!tokenLoading && token && <SignUp />}
+      </div>
+    </TokenContext.Provider>
   );
-}
+};
+
+export default App;

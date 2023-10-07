@@ -1,0 +1,66 @@
+{
+  "form_label": "Sing Up!",
+  "fields": [
+    {
+      "name": "fisrtName",
+      "label": "First Name",
+      "type": "text",
+      "value": "",
+      "required": "true",
+      "errorMessage": "First Name should be 2-20 characters and shouldn't include any special character!",
+      "pattern": "^[A-Za-z0-9]{2,20}$",
+      "placeholder": "My name is..."
+    },
+    {
+      "name": "lastName",
+      "label": "Last Name",
+      "type": "text",
+      "value": "",
+      "required": "true",
+      "errorMessage": "Last Name should be 2-20 characters and shouldn't include any special character!",
+      "pattern": "^[A-Za-z0-9]{2,20}$",
+      "placeholder": "My last name is..."
+    },
+    {
+      "name": "state",
+      "label": "State",
+      "type": "select",
+      "value": "",
+      "required": "true",
+      "errorMessage": "This field is required to be selected",
+      "placeholder": "Select an state",
+      "options": [],
+      "loadOptionsFrom":"https://www.universal-tutorial.com/api/states/United States"
+    },
+    {
+      "name": "city",
+      "label": "City",
+      "type": "select",
+      "value": "",
+      "required": "true",
+      "errorMessage": "This field is required to be selected",
+      "placeholder": "Select a city",
+      "options": [],
+      "loadOptionsFrom": "https://www.universal-tutorial.com/api/cities/",
+      "optionsDependOn": "state"
+    },
+    {
+      "name": "email",
+      "label": "E-mail",
+      "type": "email",
+      "value": "",
+      "required": "true",
+      "errorMessage": "It should be a valid email address!",
+      "placeholder": "example@mail.com"
+    },
+    {
+      "name": "password",
+      "label": "Password",
+      "type": "password",
+      "value": "",
+      "required": "true",
+      "errorMessage": "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      "pattern": "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+    }
+  ]
+}
