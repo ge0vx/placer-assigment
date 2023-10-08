@@ -4,10 +4,7 @@ import "./FormSelect.css";
 type TypeSelectMethos = {
   onChange: (name: string, value: string) => void;
   requestOptions: (id: string, url: string, optionsDependOn?: string) => void;
-  changeSelectOptions: (
-    id: string,
-    options: ISelectOptionProps[]
-  ) => void;
+  changeSelectOptions: (id: string, options: ISelectOptionProps[]) => void;
 };
 
 export interface ISelectOptionProps {

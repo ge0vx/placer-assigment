@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 interface FetchOptions {
   headers?: any;
 }
@@ -8,17 +7,18 @@ export const useFetch = <T = any>() => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async (
-    fetchData: { url: string; options: FetchOptions },
-  ): Promise<T> => {
+  const fetchData = async (fetchData: {
+    url: string;
+    options: FetchOptions;
+  }): Promise<T> => {
     try {
       setLoading(true);
       const response = await fetch(fetchData.url, fetchData.options);
-
       return await response.json();
-    } catch (err) {
-      setError(err as string);
-      throw err;
+    } catch (error) {
+      console.error(error);
+      setError("Problem fetching data");
+      throw error;
     } finally {
       setLoading(false);
     }

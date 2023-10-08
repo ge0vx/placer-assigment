@@ -5,7 +5,7 @@ export interface ITokenContext {
 }
 
 export const TokenContext = createContext<ITokenContext>({
-  token: null
+  token: null,
 });
 
 export const useTokenContext = () => useContext(TokenContext);

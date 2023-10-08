@@ -43,7 +43,7 @@ export const Form: React.FC<IFormProps> = ({ title, fields }) => {
   useEffect(() => {
     if (findValue && dependency?.name && dependency?.url) {
       fetchSelectOptions(dependency.name, `${dependency.url}${findValue}`);
-      setDependency(undefined)
+      setDependency(undefined);
     }
   }, [findValue]);
 
@@ -103,9 +103,9 @@ export const Form: React.FC<IFormProps> = ({ title, fields }) => {
 
   const formHandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const requestBody = formatOutput(elements)
-    console.log('requestBody: ', requestBody)
-    alert(`${JSON.stringify({requestBody: requestBody})}`)
+    const requestBody = formatOutput(elements);
+    console.log("requestBody: ", requestBody);
+    alert(`${JSON.stringify({ requestBody: requestBody })}`);
   };
 
   return (

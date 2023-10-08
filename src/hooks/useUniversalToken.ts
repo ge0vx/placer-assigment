@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as LocationService from "../services/LocationService";
 import { useFetch } from "./useFetch";
 
-export const useUniversalTutorial = () => {
+export const useUniversalToken = () => {
   const { fetchData, loading, error } = useFetch();
   const [token, setToken] = useState<string | null>(null);
 
@@ -20,6 +20,6 @@ export const useUniversalTutorial = () => {
   return {
     token,
     tokenLoading: loading,
-    tokenErrorMessage: error
+    tokenErrorMessage: error,
   };
 };

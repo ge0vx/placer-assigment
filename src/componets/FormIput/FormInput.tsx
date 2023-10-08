@@ -1,11 +1,11 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React, { useState } from "react";
 import "./FormInput.css";
 
 type TypeInputTextMethos = {
   onChange: (name: string, value: string) => void;
-}
+};
 
-export interface IInputTextProps{
+export interface IInputTextProps {
   name: string;
   label: string;
   type: "text" | "password" | "email";
@@ -16,7 +16,9 @@ export interface IInputTextProps{
   pattern?: string;
 }
 
-export const FormInput: React.FC<IInputTextProps & TypeInputTextMethos> = (props) => {
+export const FormInput: React.FC<IInputTextProps & TypeInputTextMethos> = (
+  props
+) => {
   const {
     name,
     label,
@@ -46,8 +48,8 @@ export const FormInput: React.FC<IInputTextProps & TypeInputTextMethos> = (props
         type={type}
         value={value}
         required={!!required}
-        onChange={(e: React.ChangeEvent<HTMLInputElement> )=>{
-          onChange(e.target.name, e.target.value)
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          onChange(e.target.name, e.target.value);
         }}
         onBlur={handleBlur}
         onFocus={handleFocus}

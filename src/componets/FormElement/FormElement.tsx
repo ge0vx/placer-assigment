@@ -5,14 +5,10 @@ import { FormSelect, ISelectProps } from "../FormSelect/FormSelect";
 
 export type TypeFormElement = IInputTextProps | ISelectProps;
 
-export const FormElement = ({
-  field: props,
-}: {
-  field: TypeFormElement;
-}) => {
+export const FormElement = ({ field: props }: { field: TypeFormElement }) => {
+  const { formOnChange, formLoadSelectOptions, formChangeSelectOptions } =
+    useContext(FormContext);
 
-  const { formOnChange, formLoadSelectOptions, formChangeSelectOptions } = useContext(FormContext);
-  
   switch (props.type) {
     case "text":
     case "email":
@@ -33,19 +29,19 @@ export const FormElement = ({
     case "select":
       return (
         <FormSelect
-              name={props.name}
-              label={props.label}
-              type={props.type}
-              value={props.value}
-              required={props.required}
-              errorMessage={props.errorMessage}
-              onChange={formOnChange}
-              requestOptions={formLoadSelectOptions}
-              changeSelectOptions={formChangeSelectOptions}
-              placeholder={props.placeholder}
-              options={props.options}
-              optionsDependOn={props.optionsDependOn}
-              loadOptionsFrom={props.loadOptionsFrom}
+          name={props.name}
+          label={props.label}
+          type={props.type}
+          value={props.value}
+          required={props.required}
+          errorMessage={props.errorMessage}
+          onChange={formOnChange}
+          requestOptions={formLoadSelectOptions}
+          changeSelectOptions={formChangeSelectOptions}
+          placeholder={props.placeholder}
+          options={props.options}
+          optionsDependOn={props.optionsDependOn}
+          loadOptionsFrom={props.loadOptionsFrom}
         />
       );
     default:
