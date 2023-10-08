@@ -1,4 +1,5 @@
-import { ISelectOptionProps } from "../componets/FormSelect/FormSelect"
+import { IInputTextProps } from "../componets/FormIput/FormInput"
+import { ISelectOptionProps, ISelectProps } from "../componets/FormSelect/FormSelect"
 
 type option = {
     state_name?: string
@@ -13,4 +14,8 @@ export function formatSelectOptions(id: string,options : option[]): ISelectOptio
         default:
             return []
     }
+}
+
+export function formatOutput(elements: IInputTextProps[] & ISelectProps[]){
+    return elements.map((element)=>({[element.name]: element.value,}))
 }

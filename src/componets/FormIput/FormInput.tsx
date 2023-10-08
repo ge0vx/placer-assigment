@@ -40,7 +40,7 @@ export const FormInput: React.FC<IInputTextProps & TypeInputTextMethos> = (props
 
   return (
     <div className="formInput">
-      <label>{label}</label>
+      <label className="label">{label}</label>
       <input
         name={name}
         type={type}

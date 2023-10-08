@@ -91,7 +91,7 @@ export const FormSelect: React.FC<ISelectProps & TypeSelectMethos> = (
 
   return (
     <div className="formInput">
-      <label>{label}</label>
+      <label className="label">{label}</label>
       <select
         name={name}
         value={value}

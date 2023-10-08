@@ -15,9 +15,16 @@ const App: React.FC = () => {
       }}
     >
       <div className="app-container">
-        <div className={`${tokenLoading ? 'loading' : 'not-loading'}`}>loading...</div>
+        <div className={`${tokenLoading ? 'loading' : 'not-loading'}`}>
+          <img 
+          src="https://1742632032.rsc.cdn77.org/sysimages/listloader.gif"
+          alt="new"
+          />
+          <p>Loading...</p>
+        </div>
         <div className={`${tokenErrorMessage ? 'error' : 'not-error'}`}>{tokenErrorMessage}</div>
         { !tokenLoading && !!token && <SignUp />}
+        <p className="sign">Giovany Perez Bautista | giovanypeb@gmail.com</p>
       </div>
     </TokenContext.Provider>
   );

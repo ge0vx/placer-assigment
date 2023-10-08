@@ -3,12 +3,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnMxMjcwNy1pbWFnZS1rd3Z3b2E3cC5qcGc.jpg?s=gZJx5Bz0CDGfxsGtOxRR0mzjgzhDdWWhzgZYYcZdZrU");
+  background-size: cover;
+  background-position: center;
 }
+
 
 .not-loading, .not-error{
   display: none;
 }
 
 .loading, .error{
+  text-align: center;
+  font-size: 28px;
   display: initial;
+  color: white;
+}
+
+body{
+  padding: 0;
+}
+
+.sign{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
 }

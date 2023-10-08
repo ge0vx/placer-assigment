@@ -5,22 +5,22 @@
 }
 
 input{
-    padding: 15px;
+    padding: 16px;
     margin: 10px 0px;
     border-radius: 5px;
     border: 1px solid gray;
 }
 
 
-label{
-    font-size: 12px;
+.label{
+    font-size: 16px;
     color: gray;
 }
 
 span{
-    font-size: 12px;
+    font-size: 14px;
     padding: 3px;
-    color: red;
+    color: rgb(232, 2, 2);
     display: none;
 }
 

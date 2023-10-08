@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { FormContext } from "../../context/FormContext";
 import { FormElement, TypeFormElement } from "../FormElement/FormElement";
 import { IInputTextProps } from "../FormIput/FormInput";
 import { ISelectOptionProps, ISelectProps } from "../FormSelect/FormSelect";
 import { useSelectOptions } from "../../hooks/useSelectOptions";
+import "./Form.css";
+import { formatOutput } from "../../utils/formatData";
 
 type TypeFormFileds = IInputTextProps[] & ISelectProps[];
 
@@ -101,6 +103,9 @@ export const Form: React.FC<IFormProps> = ({ title, fields }) => {
 
   const formHandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const requestBody = formatOutput(elements)
+    console.log('requestBody: ', requestBody)
+    alert(`${JSON.stringify({requestBody: requestBody})}`)
   };
 
   return (
