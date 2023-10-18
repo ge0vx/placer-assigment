@@ -1,9 +1,9 @@
-# placer-assigment
+# React placer-assigment
 Created with CodeSandbox
-## requirements
+## Requirements
 node 18
-## install
+## Install
 clone repository and install with:
 npm install
-## run
+## Run
 npm run start
